@@ -12,7 +12,7 @@ class ValidadeDoForm {
         e.preventDefault()
         const validations = this.validaOn()
     }
-
+    
     validaOn() {
         let valid = true 
         
@@ -48,6 +48,16 @@ class ValidadeDoForm {
             
              if(campo.classList.contains('cpf')) {
                 if(!this.validaCpf(campo, label)) valid = false
+
+             }
+
+             if(campo.classList.contains('senha')) {
+                if(!this.validaSenha()) valid = false
+
+             }
+
+             if(campo.classList.contains('email')) {
+                if(!this.validaEmail()) valid = false
 
              }
         }
@@ -100,7 +110,40 @@ class ValidadeDoForm {
         return valid
     }
 
-    
+    validaSenha() {
+        let valid = true 
+        const senha = document.querySelector('#senha')
+        const repSenha = document.querySelector('#confirm-senha')
+
+        if(senha.value.length < 6 || senha.value.length > 12) {
+            this.msgErro(senha, '*Sua senha deve conter de 6 a 12 caracteres*')
+
+            valid = false
+        }
+
+        if(senha.value !== repSenha.value) {
+            this.msgErro(senha, '*As senhas não correspondem*')
+
+            valid = false            
+        }
+
+        return valid
+    }
+
+    validaEmail() {
+        let valid = true 
+        const email = document.querySelector('#email')
+        const repEmail = document.querySelector('#confirm-email')
+
+        if(email.value !== repEmail.value) {
+            this.msgErro(email, '*O email confirmado não corresponde*')
+
+            valid = false            
+        }
+
+        return valid
+    }
+
 
     msgErro(campo, msg) {
         const div = document.createElement('div')
@@ -110,8 +153,6 @@ class ValidadeDoForm {
     }
     
 }
-
-    
-    
+  
 const validade = new ValidadeDoForm()
 
