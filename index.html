@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section class="secao-form">
+            <div class="login">
+                <h1>HorizonBank</h1>    
+                <form method="post" class="formulario-login" autocomplete="off">
+                    <div class="question-log">
+                        <label for="login">Login</label>
+                        <input type="text" id="login" class="validade">
+                    </div>
+                    <div class="question-log">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha-log" class="validade">
+                    </div>
+                    <div class="question-log">
+                        <button type="submit" class="entrar">Entrar</button>
+                    </div>
+                </form>    
+            </div>
+            <div class="cria-conta">
+                <div class="header-cc">
+                    <h1>Cadastrar-se</h1>
+                </div>
+                <form method="post" class="formulario-criar" autocomplete="off">
+                    <div class="question">
+                        <label for="nome">Nome </label>
+                        <input type="text" id="nome" class="validade name">
+                    </div>
+                    <div class="question">
+                        <label for="sobrenome">Sobrenome </label>
+                        <input type="text" id="sobrenome" class="validade nickname">
+                    </div>
+                    <div class="question">
+                        <label for="usuario">Usuário</label>
+                        <input type="text" id="usuario" class="validade usuario">
+                    </div>
+                    <div class="question">
+                        <label for="cpf">Cpf</label>
+                        <input type="text" id="cpf" class="validade cpf">
+                    </div>
+                    <div class="question">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="validade">
+                    </div>
+                    <div class="question">
+                        <label for="confirm-email">Repetir email</label>
+                        <input type="email" id="confirm-email" class="validade">
+                    </div>
+                    <div class="question">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" class="validade">
+                    </div>
+                    <div class="question">
+                        <label for="confirm-senha">Repetir senha</label>
+                        <input type="password" id="confirm-senha" class="validade">
+                    </div>
+                    <div class="question">
+                        <button type="submit" class="enviar">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="script/ValidaCPF.js"></script>
+    <script src="script/validation.js"></script>
+</body>
+</html>
