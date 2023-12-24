@@ -11,6 +11,7 @@ class ValidadeDoForm {
     handleSubmit(e) {
         e.preventDefault()
         const validations = this.validaOn()
+        if(validations) alert('Formulário Enviado!')
     }
     
     validaOn() {
@@ -62,6 +63,7 @@ class ValidadeDoForm {
              }
         }
 
+        return valid
     }
 
     // Validade Nome e Sobrenome(somente letras).
@@ -69,7 +71,7 @@ class ValidadeDoForm {
         const NameOrNick = campo.value
         let valid = true
 
-        if(!NameOrNick.match(/[a-zA-Z]/g)) {
+        if(!NameOrNick.match(/^[a-zA-Z]+$/)) {
             this.msgErro(campo, `*Campo ${label} deve conter somente letras*`)
             valid = false
         }
@@ -87,7 +89,7 @@ class ValidadeDoForm {
             valid = false
         }
 
-        if(!user.match(/[a-zA-z-0-9]+$/)) {
+        if(!user.match(/^[a-zA-Z0-9]+$/)) {
             this.msgErro(campo, `*Campo ${label} deve conter somente letras e números*`)
 
             valid = false
